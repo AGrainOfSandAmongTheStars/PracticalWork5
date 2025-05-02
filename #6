@@ -1,0 +1,26 @@
+class Abonent {
+    constructor(name, number) {
+        this.name = name;
+        this.number = number;
+    }
+    get getAbonent() {
+        return `Ім'я: ${this.name}, Номер: ${this.number}`;
+    }
+}
+class PhoneBook {
+    constructor() {
+        this.contacts = [];
+    }
+    addContact(name, number) {
+        const newContact = new Abonent(name, number);
+        this.contacts.push(newContact);
+    }
+    showContacts() {
+        console.log("Контакти: ");
+        this.contacts.forEach(contact => console.log(contact.getAbonent));
+        }
+    }
+const phoneBook = new PhoneBook();
+phoneBook.addContact("ДСНС", 101);
+phoneBook.addContact("Поліція", 102);
+phoneBook.addContact("Швидка", 103);
